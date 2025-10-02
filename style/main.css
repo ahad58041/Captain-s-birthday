@@ -3,8 +3,13 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #fbc2eb, #fde2e4);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: black; /* text visible on gradient */
 }
 .song {
   visibility: hidden;
@@ -28,7 +33,7 @@ body {
 }
 
 .one {
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 
 .two {
@@ -37,7 +42,7 @@ body {
 }
 
 .three {
-  font-size: 3rem;
+  font-size: 1.9rem;
 }
 
 .four .text-box {
@@ -231,31 +236,77 @@ body {
   border: 5px solid pink;
 }
 
-/* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
+/* Base styles (Desktop first, default) */
+
+/* --- Large Screens (Desktops) --- */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 85%;
   }
 }
 
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
+/* --- Medium Screens (Tablets & small laptops) --- */
+@media screen and (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+
+  .four .text-box {
+    width: 85%;
+  }
+
+  .wish-hbd {
+    font-size: 2.5em;
+  }
+
+  .wish h5 {
+    font-size: 1.6rem;
   }
 }
 
-@media screen and (max-height: 700px) {
+/* --- Small Screens (Tablets / Large Phones) --- */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .four .text-box {
+    width: 95%;
+  }
+
+  .text-box .fake-btn {
+    bottom: -30px;
+    right: 5px;
+  }
+
+  .idea-5 span {
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  .idea-6 span {
+    font-size: 7rem;
+  }
+
   .six .hat {
-    left: 32%;
+    width: 60px;
+    left: 35%;
+  }
+
+  .wish-hbd {
+    font-size: 2em;
+  }
+
+  .wish h5 {
+    font-size: 1.3rem;
+  }
+
+  .nine p {
+    font-size: 1.3rem;
   }
 }
 
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
+/* --- Extra Small Screens (Phones) --- */
 @media screen and (max-width: 500px) {
   .container {
     width: 90%;
@@ -270,17 +321,13 @@ body {
     right: 5px;
   }
 
-  .idea-5 span {
-    display: block;
-  }
-
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 5rem;
   }
 
   .six .hat {
-    /* top: -20px; */
     width: 50px;
+    left: 32%;
   }
 
   .wish-hbd {
@@ -292,7 +339,43 @@ body {
   }
 
   .nine p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: lighter;
   }
 }
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Very Small Screens (Mini Phones <350px) --- */
+@media screen and (max-width: 350px) {
+  .wish-hbd {
+    font-size: 1.8em;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
+  }
+
+  .idea-6 span {
+    font-size: 4rem;
+  }
+
+  .six .hat {
+    width: 40px;
+    left: 28%;
+  }
+
+  .nine p {
+    font-size: 1rem;
+  }
+}
+/* --- IGNORE --- */
